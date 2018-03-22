@@ -13,7 +13,7 @@ namespace MobileAppMock
 		{
 			InitializeComponent();
 
-			MainPage = new MobileAppMock.MainPage();
+			MainPage = new NavigationPage(new MobileAppMock.MainPage());
 		}
 
 		protected override void OnStart ()
