@@ -1,4 +1,5 @@
-﻿using ListViews.ViewModel;
+﻿using ListViews.Model;
+using ListViews.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,16 @@ namespace ListViews
 			InitializeComponent();
             BindingContext = new MainPageViewModel();
 		}
-	}
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if(e.SelectedItem == null)
+            {
+                return;
+            }
+            Person person = e.SelectedItem as Person;
+            DisplayAlert("Selected", person.FirstName, "OK");
+        }
+
+    }
 }
