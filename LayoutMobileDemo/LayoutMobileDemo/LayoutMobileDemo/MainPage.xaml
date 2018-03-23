@@ -52,6 +52,8 @@
         <Label Text="{Binding LabelText}" BackgroundColor="Blue" TextColor="White" />
         <Button Text="Click Me!" BackgroundColor="Blue" TextColor="Yellow" Command="{Binding ChangeTextCommand}"/>
 
+        <Image Source="fifa.png" Aspect="AspectFit" WidthRequest="75" HeightRequest="75" />
+
     </StackLayout>
 
 </ContentPage>
