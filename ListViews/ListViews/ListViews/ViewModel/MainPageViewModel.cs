@@ -14,7 +14,7 @@ namespace ListViews.ViewModel
         {
             for(int i = 0;  i < 5; ++i)
             {
-                Person p = new Person { Name = $"Luci {i}", Address = $"AdressOras {i + 1}" };
+                Person p = new Person { Name = $"Luci {i}", Address = $"AdressOras {i + 1}" , ImageSource = $"man{i}.jpg"};
                 People.Add(p);
             }
         }

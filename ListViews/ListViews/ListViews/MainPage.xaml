@@ -8,7 +8,7 @@
         <ListView ItemsSource="{Binding People}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Address}" />
+                    <ImageCell Text="{Binding Name}" Detail="{Binding Address}" ImageSource="{Binding ImageSource}" TextColor="Black" DetailColor="Gray"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
             
