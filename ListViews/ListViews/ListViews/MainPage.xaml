@@ -2,13 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ListViews"
+             xmlns:converters="clr-namespace:ListViews.Converters"
              x:Class="ListViews.MainPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DoubleToIntConverter x:Key="doubleToIntegerConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout Padding="20">
         <ListView ItemsSource="{Binding People}" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <TextCell
+                        Text="{Binding FirstName}"
+                        Detail="{Binding Age, Converter={StaticResource doubleToIntegerConverter}}"
+                        />
+
+
+                    <!--<ViewCell>
                         <ContentView>
                             <StackLayout Padding="20">
                                 <StackLayout Orientation="Horizontal">
@@ -19,7 +31,7 @@
                                 <Image Source="{Binding ImageSource}" Aspect="AspectFit" WidthRequest="75" HeightRequest="75" />
                             </StackLayout>
                         </ContentView>
-                    </ViewCell>
+                    </ViewCell>-->
                     <!--<ImageCell Text="{Binding Name}" Detail="{Binding Address}" ImageSource="{Binding ImageSource}" TextColor="Black" DetailColor="Gray"/>-->
                 </DataTemplate>
             </ListView.ItemTemplate>
