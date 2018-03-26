@@ -38,4 +38,11 @@
             
         </ListView>
     </StackLayout>
+    <StackLayout Padding="40">
+        <Entry Placeholder="Enter an integer">
+            <Entry.Behaviors>
+                <local:IntValidationBehavior />
+            </Entry.Behaviors>
+        </Entry>
+    </StackLayout>
 </ContentPage>
